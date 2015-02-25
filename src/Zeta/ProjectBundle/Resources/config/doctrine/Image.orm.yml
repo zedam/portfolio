@@ -1,0 +1,18 @@
+Zeta\ProjectBundle\Entity\Image:
+    type: entity
+    table: null
+    repositoryClass: Zeta\ProjectBundle\Entity\ImageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        src:
+            type: string
+            length: 255
+        title:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

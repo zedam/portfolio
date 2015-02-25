@@ -1,0 +1,11 @@
+services:
+    sonata.admin.project:
+        class: Zeta\ProjectBundle\Admin\ProjectAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Project" }
+        arguments:
+            - ~
+            - Zeta\ProjectBundle\Entity\Project
+            - ~
+        calls:
+            - [ setTranslationDomain, [ZetaProjectBundle]]

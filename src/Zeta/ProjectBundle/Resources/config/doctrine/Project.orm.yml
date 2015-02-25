@@ -1,0 +1,55 @@
+Zeta\ProjectBundle\Entity\Project:
+    type: entity
+    table: null
+    repositoryClass: Zeta\ProjectBundle\Entity\ProjectRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: '255'
+        description:
+            type: text
+        url:
+            type: string
+            length: '255'
+        category_id:
+            type: integer
+        location:
+            type: string
+            length: 255
+        intro:
+            type: text
+        labels:
+            type: text
+        isMobile:
+            type: boolean
+            column: is_mobile
+        isTablet:
+            type: boolean
+            column: is_tablet
+        isDesktop:
+            type: boolean
+            column: is_desktop
+        isRetina:
+            type: boolean
+            column: is_retina
+        code:
+            type: string
+            length: 255
+        size:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        category:
+            targetEntity: Category
+            inversedBy: projects
+            joinColumn:
+                name: category_id
+                referencedColumnName: id
