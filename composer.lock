@@ -1071,16 +1071,16 @@
         },
         {
             "name": "gedmo/doctrine-extensions",
-            "version": "v2.3.11",
+            "version": "v2.3.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "5e19886a64ef7e3540bb362eacfdf7d60c5608e6"
+                "reference": "c3ff3c73c95b01e107af33d4fe3abf80794e2df9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/5e19886a64ef7e3540bb362eacfdf7d60c5608e6",
-                "reference": "5e19886a64ef7e3540bb362eacfdf7d60c5608e6",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/c3ff3c73c95b01e107af33d4fe3abf80794e2df9",
+                "reference": "c3ff3c73c95b01e107af33d4fe3abf80794e2df9",
                 "shasum": ""
             },
             "require": {
@@ -1145,7 +1145,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2015-01-28 09:12:46"
+            "time": "2015-02-24 21:41:37"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -1884,12 +1884,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "8ac0191016b41965d771be504756210e5e497c59"
+                "reference": "c95da3745edf48ccf9fbe05cd0089bd6ad3ba905"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/8ac0191016b41965d771be504756210e5e497c59",
-                "reference": "8ac0191016b41965d771be504756210e5e497c59",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/c95da3745edf48ccf9fbe05cd0089bd6ad3ba905",
+                "reference": "c95da3745edf48ccf9fbe05cd0089bd6ad3ba905",
                 "shasum": ""
             },
             "require": {
@@ -1957,7 +1957,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2015-02-21 12:47:03"
+            "time": "2015-02-25 09:28:13"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -2090,12 +2090,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataCoreBundle.git",
-                "reference": "9a488952c92c890e72def71c2a00651f9e545e34"
+                "reference": "680aee93dc40ddd6b004afd8c21c3024413be21c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataCoreBundle/zipball/9a488952c92c890e72def71c2a00651f9e545e34",
-                "reference": "9a488952c92c890e72def71c2a00651f9e545e34",
+                "url": "https://api.github.com/repos/sonata-project/SonataCoreBundle/zipball/680aee93dc40ddd6b004afd8c21c3024413be21c",
+                "reference": "680aee93dc40ddd6b004afd8c21c3024413be21c",
                 "shasum": ""
             },
             "require": {
@@ -2147,7 +2147,7 @@
             "keywords": [
                 "sonata"
             ],
-            "time": "2015-02-21 12:48:12"
+            "time": "2015-02-25 09:30:16"
         },
         {
             "name": "sonata-project/doctrine-extensions",
@@ -3126,7 +3126,6 @@
         "sonata-project/block-bundle": 20
     },
     "prefer-stable": false,
-    "prefer-lowest": false,
     "platform": {
         "php": ">=5.3.3"
     },
