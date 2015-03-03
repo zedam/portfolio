@@ -74,10 +74,10 @@ class Project
      */
     private $size;
 
-		/**
-		 * @var integer
-		 */
-		private $category_id;
+    /**
+     * @var integer
+     */
+    private $category_id;
 
 
     /**

@@ -3,6 +3,7 @@
 namespace Zeta\ProjectBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Category
@@ -62,7 +63,7 @@ class Category
      */
     public function __construct()
     {
-        $this->projects = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->projects = new ArrayCollection();
     }
 
     /**

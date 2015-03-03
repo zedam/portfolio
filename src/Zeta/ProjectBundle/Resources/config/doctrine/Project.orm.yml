@@ -14,36 +14,47 @@ Zeta\ProjectBundle\Entity\Project:
             length: '255'
         description:
             type: text
+            nullable: TRUE
         url:
             type: string
             length: '255'
+            nullable: TRUE
         category_id:
             type: integer
         location:
             type: string
             length: 255
+            nullable: TRUE
         intro:
             type: text
+            nullable: TRUE
         labels:
             type: text
+            nullable: TRUE
         isMobile:
             type: boolean
             column: is_mobile
+            nullable: TRUE
         isTablet:
             type: boolean
             column: is_tablet
+            nullable: TRUE
         isDesktop:
             type: boolean
             column: is_desktop
+            nullable: TRUE
         isRetina:
             type: boolean
             column: is_retina
+            nullable: TRUE
         code:
             type: string
             length: 255
+            nullable: TRUE
         size:
             type: string
             length: 255
+            nullable: TRUE
     lifecycleCallbacks: {  }
 
     manyToOne:

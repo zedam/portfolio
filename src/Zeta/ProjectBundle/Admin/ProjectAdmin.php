@@ -4,6 +4,7 @@
 	use Sonata\AdminBundle\Admin\Admin;
 	use Sonata\AdminBundle\Datagrid\ListMapper;
 	use Sonata\AdminBundle\Datagrid\DatagridMapper;
+    use Sonata\AdminBundle\Validator\ErrorElement;
 	use Sonata\AdminBundle\Form\FormMapper;
 
 	class ProjectAdmin extends Admin
@@ -11,20 +12,36 @@
 		// Fields to be shown on create/edit forms
 		protected function configureFormFields(FormMapper $formMapper)
 		{
+
+            $categories = array('choices' => null);
 			$formMapper
+            ->with('Projects')
 			->add('title', 'text', array('label' => 'Project Title'))
 			->add('description', 'text', array('label' => 'Description'))
-			->add('url') //if no type is specified, SonataAdminBundle tries to guess it
-			->add('location') //if no type is specified, SonataAdminBundle tries to guess it
-			->add('intro') //if no type is specified, SonataAdminBundle tries to guess it
-			->add('labels') //if no type is specified, SonataAdminBundle tries to guess it
-			->add('isMobile') //if no type is specified, SonataAdminBundle tries to guess it
-			->add('isTablet') //if no type is specified, SonataAdminBundle tries to guess it
-			->add('isDesktop') //if no type is specified, SonataAdminBundle tries to guess it
-			->add('isRetina') //if no type is specified, SonataAdminBundle tries to guess it
-			->add('size') //if no type is specified, SonataAdminBundle tries to guess it
-			->add('category_id') //if no type is specified, SonataAdminBundle tries to guess it
-			;
+			->add('url')
+			->add('location')
+			->add('intro')
+            ->add('labels')
+			->add('isMobile')
+			->add('isTablet')
+			->add('isDesktop')
+			->add('isRetina')
+			->add('size')
+			->add('category_id')
+			/*->add('category_id', 'sonata_type_choice_field_mask', array(
+                'choices' =>  array('uri' => 'uri', 'route' => 'route'),
+                'map' => array(
+                    'route' => array('route', 'parameters'),
+                    'uri' => array('uri'),
+                ),
+                'empty_value' => 'Choose an option',
+                'required' => false
+            ->add('category_id', 'choice', array(
+                'choices' => array('asas'),
+            ))
+            ))*/
+            ->end()
+        	;
 		}
 
 		// Fields to be shown on filter forms
