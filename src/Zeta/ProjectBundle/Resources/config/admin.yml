@@ -1,9 +1,31 @@
 services:
-    sonata.admin.project:
+    zeta.project.admin.project:
         class: Zeta\ProjectBundle\Admin\ProjectAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Project" }
+            - { name: sonata.admin, manager_type: orm, group: "Projects", label: "Project" }
         arguments:
+            - ~
             - Zeta\ProjectBundle\Entity\Project
+            - ~
+        calls:
+            - [ setTranslationDomain, [ZetaProjectBundle]]
+    zeta.project.admin.category:
+        class: Zeta\ProjectBundle\Admin\CategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Projects", label: "Category" }
+        arguments:
+            - ~
+            - Zeta\ProjectBundle\Entity\Category
+            - ~
+        calls:
+            - [ setTranslationDomain, [ZetaProjectBundle]]
+    zeta.project.admin.image:
+        class: Zeta\ProjectBundle\Admin\ImageAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Projects", label: "Images" }
+        arguments:
+            - ~
+            - Zeta\ProjectBundle\Entity\Image
+            - ~
         calls:
             - [ setTranslationDomain, [ZetaProjectBundle]]

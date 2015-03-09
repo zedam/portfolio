@@ -9,10 +9,20 @@ Zeta\ProjectBundle\Entity\Image:
             generator:
                 strategy: AUTO
     fields:
-        src:
+        project_id:
+            type: integer
+        file:
             type: string
             length: 255
         title:
             type: string
             length: 255
     lifecycleCallbacks: {  }
+
+    manyToOne:
+        project:
+            targetEntity: Project
+            inversedBy: images
+            joinColumn:
+                name: project_id
+                referencedColumnName: id

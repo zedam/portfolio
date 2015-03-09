@@ -371,6 +371,14 @@ class Project
     private $category;
 
 
+
+    /**
+     * @ORM\OneToMany(targetEntity="Category", mappedBy="categories")
+     * @ORM\OrderBy({"id" = "ASC"})
+     */
+    private $categories;
+
+
     /**
      * Set category
      *
@@ -417,4 +425,50 @@ class Project
     {
         return $this->category_id;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $images;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->images = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add images
+     *
+     * @param \Zeta\ProjectBundle\Entity\Image $images
+     * @return Image
+     */
+    public function addImage(\Zeta\ProjectBundle\Entity\Image $image)
+    {
+        $image->setProject($this);
+
+        $this->images->add($image);
+    }
+
+    /**
+     * Remove images
+     *
+     * @param \Zeta\ProjectBundle\Entity\Image $images
+     */
+    public function removeImage(\Zeta\ProjectBundle\Entity\Image $image)
+    {
+        $this->images->removeElement($image);
+    }
+
+    /**
+     * Get images
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
+
 }

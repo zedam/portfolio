@@ -1,11 +1,14 @@
 <?php
 	namespace Zeta\ProjectBundle\Admin;
 
+    use Zeta\ProjectBundle\Entity\Project;
 	use Sonata\AdminBundle\Admin\Admin;
 	use Sonata\AdminBundle\Datagrid\ListMapper;
 	use Sonata\AdminBundle\Datagrid\DatagridMapper;
     use Sonata\AdminBundle\Validator\ErrorElement;
 	use Sonata\AdminBundle\Form\FormMapper;
+    use Knp\Menu\ItemInterface as MenuItemInterface;
+
 
 	class ProjectAdmin extends Admin
 	{
@@ -27,8 +30,9 @@
 			->add('isDesktop')
 			->add('isRetina')
 			->add('size')
-			->add('category_id')
-			/*->add('category_id', 'sonata_type_choice_field_mask', array(
+            ->add('category_id')
+            //->add('category_id')
+            /*->add('category_id', 'sonata_type_choice_field_mask', array(
                 'choices' =>  array('uri' => 'uri', 'route' => 'route'),
                 'map' => array(
                     'route' => array('route', 'parameters'),
@@ -40,6 +44,10 @@
                 'choices' => array('asas'),
             ))
             ))*/
+            ->end()
+
+            ->with('Images', array('collapsed' => false))
+            //->add('images')
             ->end()
         	;
 		}
@@ -62,4 +70,14 @@
 			->add('url')
 			;
 		}
+
+        public function prePersist($project)
+        {
+            $this->preUpdate($project);
+        }
+
+        public function preUpdate($project)
+        {
+            $project->setImages($project->getImages());
+        }
 	}

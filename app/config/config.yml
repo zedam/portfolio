@@ -2,6 +2,9 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: @ZetaProjectBundle/Resources/config/admin.yml }
+    - { resource: doctrine_extensions.yml }
+
 
 framework:
     #esi:             ~
@@ -57,6 +60,17 @@ doctrine:
         password: "%database_password%"
         charset:  UTF8
     orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+
+        #auto_generate_proxy_classes: "%kernel.debug%"
+        #auto_mapping: true
+        #auto_generate_proxy_classes: %kernel.debug%
+        #auto_mapping: true
+        #mappings:
+        #   StofDoctrineExtensionsBundle: ~
+
+
+
         entity_managers:
             default:
                 mappings:
@@ -65,18 +79,42 @@ doctrine:
                     SonataUserBundle: ~
                     ZetaProjectBundle: ~                                    # If SonataUserBundle extends it
                     FOSUserBundle: ~
+                    StofDoctrineExtensionsBundle: ~
                     SonataMediaBundle: ~
 
-        # if using pdo_sqlite as your database driver:
-        #   1. add the path in parameters.yml
-        #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
-        #   2. Uncomment database_path in parameters.yml.dist
-        #   3. Uncomment next line:
-        #     path:     "%database_path%"
+                    gedmo_translatable:
+                        type: annotation
+                        prefix: Gedmo\Translatable\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity"
+                        alias: GedmoTranslatable # this one is optional and will default to the name set for the mapping
+                        is_bundle: false
+                    gedmo_translator:
+                        type: annotation
+                        prefix: Gedmo\Translator\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translator/Entity"
+                        alias: GedmoTranslator # this one is optional and will default to the name set for the mapping
+                        is_bundle: false
+                    gedmo_loggable:
+                        type: annotation
+                        prefix: Gedmo\Loggable\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
+                        alias: GedmoLoggable # this one is optional and will default to the name set for the mapping
+                        is_bundle: false
+                    gedmo_tree:
+                        type: annotation
+                        prefix: Gedmo\Tree\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity"
+                        alias: GedmoTree # this one is optional and will default to the name set for the mapping
+                        is_bundle: false
 
+stof_doctrine_extensions:
+    default_locale: en
     orm:
-        auto_generate_proxy_classes: "%kernel.debug%"
-        auto_mapping: true
+        default:
+            timestampable: true
+            sluggable: true
+            blameable: false
+
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -149,6 +187,15 @@ sonata_block:
         #sonata.media.block.gallery:
         #sonata.media.block.feature_media:
 
+# SonataDoctrineORMAdmin
+sonata_doctrine_orm_admin:
+    entity_manager: ~
+    templates:
+        form: [ SonataDoctrineORMAdminBundle:Form:form_admin_fields.html.twig ]
+        filter: [ SonataDoctrineORMAdminBundle:Form:filter_admin_fields.html.twig ]
+    #templates:
+    #    form: [ Zeta:Form:form_admin_fields.html.twig ]
+
 sonata_admin:
     title:      Zeta Project Bundle
     #title_logo: bundles/acmedemo/img/fancy_acme_logo.png
@@ -197,9 +244,6 @@ knp_menu:
     # the renderer to use, list is also available by default
     default_renderer: twig
 
-
-imports:
-    - { resource: @ZetaProjectBundle/Resources/config/admin.yml }
 
 fos_user:
     db_driver:        orm # can be orm or mongodb (support is also available within FOSUser for couchdb, propel but none is given for SonataUserBundle)

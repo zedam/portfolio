@@ -12,4 +12,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class ProjectRepository extends EntityRepository
 {
+    public function findAllProjects() {
+        return $this->createQueryBuilder('a')
+            ->getQuery()
+            ->useQueryCache(true)
+            ->useResultCache(true, 360, 'ArtistRepository_findAllOnlineArtistsForStage_'.strval($stage))
+            ->getResult();
+
+    }
 }

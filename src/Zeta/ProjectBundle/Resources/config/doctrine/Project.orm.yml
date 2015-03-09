@@ -64,3 +64,9 @@ Zeta\ProjectBundle\Entity\Project:
             joinColumn:
                 name: category_id
                 referencedColumnName: id
+
+
+    oneToMany:
+        images:
+            targetEntity: Image
+            mappedBy: Project
