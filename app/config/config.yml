@@ -235,6 +235,11 @@ sonata_admin:
                 settings:
                     title: Sonata Project's Feeds
                     url: http://sonata-project.org/blog/archive.rss
+
+        groups:
+            projects:
+                label_catalogue: project
+
 knp_menu:
     # use "twig: false" to disable the Twig extension and the TwigRenderer
     twig:

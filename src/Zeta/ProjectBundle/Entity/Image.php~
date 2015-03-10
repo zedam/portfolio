@@ -108,7 +108,22 @@ class Image
         // clean up the file property as you won't need it anymore
         $this->setFile(null);
     }
-    /**
+
+		/**
+		 * Lifecycle callback to upload the file to the server
+		 */
+		public function lifecycleFileUpload() {
+				$this->upload();
+		}
+
+		/**
+		 * Updates the hash value to force the preUpdate and postUpdate events to fire
+		 */
+		public function refreshUpdated() {
+				$this->setUpdated(new \DateTime("now"));
+		}
+
+	/**
      * @var integer
      */
     private $project_id;
@@ -164,4 +179,5 @@ class Image
     {
         return $this->project;
     }
+
 }

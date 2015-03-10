@@ -17,7 +17,12 @@ Zeta\ProjectBundle\Entity\Image:
         title:
             type: string
             length: 255
-    lifecycleCallbacks: {  }
+        updated:        # changed when files are uploaded, to force preUpdate and postUpdate
+            type:         datetime
+            nullable:     true
+    lifecycleCallbacks:
+        prePersist:   [ lifecycleFileUpload ]
+        preUpdate:    [ lifecycleFileUpload ]
 
     manyToOne:
         project:

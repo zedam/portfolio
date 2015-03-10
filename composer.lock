@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2308501667f42bf6b27814764cc07ebb",
+    "hash": "7a1d267734033928af5b1a7e9fb159fb",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -2399,35 +2399,33 @@
         },
         {
             "name": "sonata-project/admin-bundle",
-            "version": "dev-master",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "ac6d6ac6de3c74c200d04565beaaab019448d076"
+                "reference": "1f08176f996a325e3bf5ccebeaf7c76be7f3d472"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/ac6d6ac6de3c74c200d04565beaaab019448d076",
-                "reference": "ac6d6ac6de3c74c200d04565beaaab019448d076",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/1f08176f996a325e3bf5ccebeaf7c76be7f3d472",
+                "reference": "1f08176f996a325e3bf5ccebeaf7c76be7f3d472",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": "~2.4",
+                "doctrine/common": "~2.2",
                 "knplabs/knp-menu": ">=1.1.0,<3.0.0",
                 "knplabs/knp-menu-bundle": ">=1.1.0,<3.0.0",
                 "sensio/generator-bundle": "~2.3",
                 "sonata-project/block-bundle": "~2.2,>=2.2.7",
-                "sonata-project/core-bundle": "dev-master",
+                "sonata-project/core-bundle": "~2.2",
                 "sonata-project/exporter": "~1.0",
                 "symfony/class-loader": "~2.3",
                 "symfony/config": "~2.3",
                 "symfony/console": "~2.3",
-                "symfony/dependency-injection": "~2.3,>=2.3.3",
                 "symfony/form": "~2.3",
                 "symfony/http-foundation": "~2.3",
                 "symfony/routing": "~2.3",
                 "symfony/security-bundle": "~2.3",
-                "symfony/translation": "~2.3",
                 "symfony/twig-bridge": "~2.3",
                 "symfony/validator": "~2.3",
                 "twig/extensions": "~1.0",
@@ -2436,7 +2434,6 @@
             "require-dev": {
                 "jms/translation-bundle": "~1.1",
                 "sonata-project/intl-bundle": "~2.1",
-                "symfony/phpunit-bridge": "2.7.*@dev",
                 "symfony/yaml": "~2.3"
             },
             "suggest": {
@@ -2446,7 +2443,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4.x-dev"
+                    "dev-master": "2.3.x-dev"
                 }
             },
             "autoload": {
@@ -2477,7 +2474,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2015-03-07 10:27:09"
+            "time": "2015-01-05 10:15:28"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -3861,7 +3858,6 @@
         "doctrine/doctrine-fixtures-bundle": 20,
         "stof/doctrine-extensions-bundle": 20,
         "gedmo/doctrine-extensions": 20,
-        "sonata-project/admin-bundle": 20,
         "sonata-project/core-bundle": 20,
         "sonata-project/block-bundle": 20
     },
