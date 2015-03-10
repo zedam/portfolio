@@ -6,6 +6,7 @@ use Zeta\ProjectBundle\Entity\Project;
 use Zeta\ProjectBundle\Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\BrowserKit\Response;
 
 class DefaultController extends Controller
 {

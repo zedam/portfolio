@@ -50,7 +50,7 @@ class Image
     }
 
     /**
-     * Get src
+     * Get file
      *
      * @return string 
      */
@@ -89,7 +89,7 @@ class Image
     public function upload()
     {
         // the file property can be empty if the field is not required
-        if (null === $this->getSrc()) {
+        if (null === $this->getFile()) {
             return;
         }
 
@@ -97,7 +97,7 @@ class Image
         // sanitize it at least to avoid any security issues
 
         // move takes the target directory and target filename as params
-        $this->getSrc()->move(
+        $this->getFile()->move(
             Image::SERVER_PATH_TO_IMAGE_FOLDER,
             $this->getFile()->getClientOriginalName()
         );

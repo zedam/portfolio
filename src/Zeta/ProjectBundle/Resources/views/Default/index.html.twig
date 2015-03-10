@@ -1,6 +1,22 @@
 Hello
-{{ dump(repository) }}
 
-{#{% for repo in repository %}
-    <li>{{ repo }}</li>
-{% endfor %}#}
+{% for repo in repository %}
+	<ul>
+    <li>
+			<h2>
+				{{ repo.id }}
+				{{ repo.title }}
+			</h2>
+		</li>
+    <li>{{ repo.description }}</li>
+    <li>{{ repo.url }}</li>
+    <li>{{ repo.Category.id }}</li>
+    <li>{{ repo.Category.name }}</li>
+    <li>{% for repos in repo.Images %}
+			{{ repos.file }}<br/>
+			{% endfor %}
+		</li>
+	</ul>
+{% endfor %}
+<br/>
+{{ dump(repository) }}

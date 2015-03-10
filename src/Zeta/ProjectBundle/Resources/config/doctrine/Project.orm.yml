@@ -65,8 +65,8 @@ Zeta\ProjectBundle\Entity\Project:
                 name: category_id
                 referencedColumnName: id
 
-
     oneToMany:
         images:
             targetEntity: Image
-            mappedBy: Project
+            mappedBy: project
+            cascade: ["persist", "merge"]

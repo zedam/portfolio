@@ -371,6 +371,14 @@ class Project
     private $category;
 
 
+
+    /**
+     * @ORM\OneToMany(targetEntity="Category", mappedBy="categories")
+     * @ORM\OrderBy({"id" = "ASC"})
+     */
+    private $categories;
+
+
     /**
      * Set category
      *
