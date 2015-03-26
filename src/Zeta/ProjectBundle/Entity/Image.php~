@@ -97,13 +97,13 @@ class Image
         // sanitize it at least to avoid any security issues
 
         // move takes the target directory and target filename as params
-        $this->getFile()->move(
+       /* $this->getFile()->move(
             Image::SERVER_PATH_TO_IMAGE_FOLDER,
             $this->getFile()->getClientOriginalName()
-        );
+        );*/
 
         // set the path property to the filename where you've saved the file
-        $this->filename = $this->getFile()->getClientOriginalName();
+        //$this->filename = $this->getFile()->getClientOriginalName();
 
         // clean up the file property as you won't need it anymore
         $this->setFile(null);
@@ -180,4 +180,32 @@ class Image
         return $this->project;
     }
 
+    /**
+     * @var \DateTime
+     */
+    private $updated;
+
+
+    /**
+     * Set updated
+     *
+     * @param \DateTime $updated
+     * @return Image
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return \DateTime 
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
 }
